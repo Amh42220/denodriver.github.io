@@ -1,0 +1,204 @@
+:root {
+  --driver-color: #dddfdf;
+  --circle-size: 14rem;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: rgb(19, 19, 19);
+  display: flex;
+}
+.whole {
+  margin: 0;
+  margin: auto;
+  width: 100rem;
+  height: 100vh;
+  flex-wrap: wrap;
+}
+.flatform {
+  padding: 0;
+  width: 100rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flatform > img {
+  width: 60rem;
+  position: relative;
+  display: inline-block;
+}
+.circle {
+  position: absolute;
+  background-color: var(--driver-color);
+  width: var(--circle-size);
+  height: var(--circle-size);
+  z-index: 0;
+  border-radius: 50%;
+}
+.button1 {
+  height: 9rem;
+  position: absolute;
+  left: 5%;
+  display: flex;
+  flex-wrap: wrap;
+}
+h1 {
+  text-align: center;
+  color: white;
+}
+.btncolor {
+  margin: 1rem 0.3rem;
+  cursor: pointer;
+  width: 7rem;
+  height: 3rem;
+  border-radius: 0.3rem;
+  border: 2px solid black;
+}
+#red-Color {
+  background-color: red;
+}
+#blue-Color {
+  background-color: blue;
+}
+#yellow-Color {
+  background-color: yellow;
+}
+#purple-Color {
+  background-color: purple;
+}
+.redColor-Animetion {
+  animation: red-background-color 10s ease;
+}
+.blueColor-Animetion {
+  animation: blue-background-color 10s ease;
+}
+.yellowColor-Animetion {
+  animation: yellow-background-color 10s ease;
+}
+.purpleColor-Animetion {
+  animation: purple-background-color 10s ease;
+}
+.cancel-Animetion {
+  animation: cancel 0.5s ease;
+}
+@keyframes red-background-color {
+  0% {
+    background-color: red;
+  }
+  25% {
+    background-color: var(--driver-color);
+  }
+  50% {
+    background-color: red;
+  }
+  75% {
+    background-color: var(--driver-color);
+  }
+  100% {
+    background-color: red;
+  }
+}
+@keyframes blue-background-color {
+  0% {
+    background-color: blue;
+  }
+  25% {
+    background-color: var(--driver-color);
+  }
+  50% {
+    background-color: blue;
+  }
+  75% {
+    background-color: var(--driver-color);
+  }
+  100% {
+    background-color: blue;
+  }
+}
+@keyframes yellow-background-color {
+  0% {
+    background-color: yellow;
+  }
+  25% {
+    background-color: var(--driver-color);
+  }
+  50% {
+    background-color: yellow;
+  }
+  75% {
+    background-color: var(--driver-color);
+  }
+  100% {
+    background-color: yellow;
+  }
+}
+@keyframes purple-background-color {
+  0% {
+    background-color: purple;
+  }
+  25% {
+    background-color: var(--driver-color);
+  }
+  50% {
+    background-color: purple;
+  }
+  75% {
+    background-color: var(--driver-color);
+  }
+  100% {
+    background-color: purple;
+  }
+}
+@keyframes cancel {
+  0% {
+    background-color: gray;
+  }
+  50% {
+    background-color: #dddfdf;
+  }
+  100% {
+    background-color: gray;
+  }
+}
+/* Landscape orientation: forces landscape on Android and other mobile devices */
+@media only screen and (max-width: 768px) and (orientation: portrait) {
+  body {
+    display: none; /* Hide content in portrait mode */
+  }
+
+  /* Optionally show a message or alert */
+  body::after {
+    content: "Please rotate your device to landscape mode.";
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    display: block;
+    margin-top: 20vh;
+  }
+}
+
+/* Force landscape layout when device is in landscape mode */
+@media only screen and (max-width: 768px) and (orientation: landscape) {
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Additional styling for landscape mode */
+  .whole {
+    width: 100%;
+    height: 100%;
+  }
+
+  .flatform {
+    justify-content: center;
+  }
+
+  .button1 {
+    position: absolute;
+    left: 5%;
+    top: 80%;
+  }
+}
